@@ -80,6 +80,7 @@ export default function App() {
   return (
     <>
       <main className='border-main-container mx-4 px-4 py-10 h-[390px] w-auto bg-white md:w-[548px] md:h-auto shadow-xl'>
+        <h1 className='sr-only'>Age Calculator</h1>
         <form
           onSubmit={onSubmit}
           className='bg-white rounded-2xl flex flex-col gap-6'
@@ -133,25 +134,25 @@ export default function App() {
             type='submit'
             className='bg-primary-purple rounded-full self-center p-1 z-20 md:self-end md:p-3 hover-btn'
           >
-            <h1 className='sr-only'>Calc</h1>
             <IconArrow />
           </button>
           <hr className='relative bottom-12 md:bottom-16' />
         </form>
 
         <section>
-          <span className='flex gap-2 text-5xl font-extrabold text-primary-purple italic md:text-7xl'>
+          <h2 className='sr-only'>Result</h2>
+          <p className='flex gap-2 text-5xl font-extrabold text-primary-purple italic md:text-7xl'>
             {years}
-            <p className='text-slate-950'>years</p>
-          </span>
-          <span className='flex gap-2 text-5xl font-extrabold text-primary-purple italic md:text-7xl'>
+            <span className='text-slate-950'>years</span>
+          </p>
+          <p className='flex gap-2 text-5xl font-extrabold text-primary-purple italic md:text-7xl'>
             {months}
-            <p className='text-slate-950'>months</p>
-          </span>
-          <span className='flex gap-2 text-5xl font-extrabold text-primary-purple italic md:text-7xl'>
+            <span className='text-slate-950'>months</span>
+          </p>
+          <p className='flex gap-2 text-5xl font-extrabold text-primary-purple italic md:text-7xl'>
             {days}
-            <p className='text-slate-950'>days</p>
-          </span>
+            <span className='text-slate-950'>days</span>
+          </p>
         </section>
       </main>
     </>
