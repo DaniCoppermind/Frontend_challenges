@@ -133,6 +133,7 @@ export default function App() {
             type='submit'
             className='bg-primary-purple rounded-full self-center p-1 z-20 md:self-end md:p-3 hover-btn'
           >
+            <h1 className='sr-only'>Calc</h1>
             <IconArrow />
           </button>
           <hr className='relative bottom-12 md:bottom-16' />
