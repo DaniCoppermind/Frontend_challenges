@@ -79,7 +79,7 @@ export default function App() {
 
   return (
     <>
-      <main className='border-main-container mx-4 px-4 py-10 h-[390px] w-auto bg-white md:w-[548px] md:h-auto shadow-xl'>
+      <main className='border-main-container mx-4 px-4 py-10 h-[390px] w-auto bg-white md:w-[625px] md:h-[500px] shadow-xl md:p-10'>
         <h1 className='sr-only'>Age Calculator</h1>
         <form
           onSubmit={onSubmit}
@@ -96,7 +96,7 @@ export default function App() {
                 required
                 max={31}
                 placeholder='DD'
-                className='w-20 h-12 pl-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-primary-purple font-extrabold md:w-24'
+                className='w-20 h-12 pl-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-primary-purple font-extrabold md:w-28'
               />
             </label>
 
@@ -111,7 +111,7 @@ export default function App() {
                 min={1}
                 max={12}
                 placeholder='MM'
-                className='w-20 h-12 pl-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-primary-purple font-extrabold md:w-24'
+                className='w-20 h-12 pl-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-primary-purple font-extrabold md:w-28'
               />
             </label>
 
@@ -126,7 +126,7 @@ export default function App() {
                 min={1}
                 max={maxYears}
                 placeholder='YYYY'
-                className='w-20 h-12 pl-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-primary-purple font-extrabold md:w-24'
+                className='w-20 h-12 pl-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-primary-purple font-extrabold md:w-28'
               />
             </label>
           </div>
