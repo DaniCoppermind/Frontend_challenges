@@ -99,6 +99,7 @@ body {
   font-weight: 500;
   font-size: 0.875rem;
   color: var(--dark-cyan);
+  background-color: var(--cream);
 
   display: grid;
   place-content: center;
