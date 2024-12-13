@@ -83,9 +83,12 @@ body {
 
 .main__container {
   padding: 5rem 1rem;
-  border: 1px solid red;
 
   .main__container-title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
     color: var(--neutral-grayish-blue);
     text-align: center;
     font-size: 1.5rem;
@@ -101,7 +104,8 @@ body {
 
   .main__container-description {
     font-size: 1rem;
-
+    max-width: 50%;
+    margin: 0 auto;
     text-align: center;
     color: var(--neutral-grayish-blue);
   }
@@ -115,25 +119,33 @@ body {
 
   margin-top: 4rem;
 
+  .container__card-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
   .container__card {
+    display: grid;
+    gap: 0.8rem;
+    max-width: 300px;
+
     padding: 1.5rem;
     border-radius: 0.8rem;
-    min-height: 200px;
     box-shadow: 0px 4px 8px 0px var(--neutral-dark-blue);
 
     h2 {
       color: var(--neutral-dark-blue);
-      margin-bottom: 0.4rem;
     }
 
     p {
       color: var(--neutral-grayish-blue);
+      margin-bottom: 1rem;
     }
 
     img {
-      position: relative;
-      top: 50px;
-      left: 220px;
+      align-self: flex-end;
+      justify-self: flex-end;
     }
   }
 }
@@ -152,4 +164,18 @@ body {
 
 .border-blue {
   border-top: 5px solid var(--blue);
+}
+
+@media (min-width: 1024px) {
+  .main__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main__container-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
