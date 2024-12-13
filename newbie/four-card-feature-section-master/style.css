@@ -118,8 +118,8 @@ body {
   .container__card {
     padding: 1.5rem;
     border-radius: 0.8rem;
-    border: 1px solid blue;
     min-height: 200px;
+    box-shadow: 0px 4px 8px 0px var(--neutral-dark-blue);
 
     h2 {
       color: var(--neutral-dark-blue);
@@ -136,4 +136,20 @@ body {
       left: 220px;
     }
   }
+}
+
+.border-orange {
+  border-top: 5px solid var(--orange);
+}
+
+.border-cyan {
+  border-top: 5px solid var(--cyan);
+}
+
+.border-red {
+  border-top: 5px solid var(--red);
+}
+
+.border-blue {
+  border-top: 5px solid var(--blue);
 }
