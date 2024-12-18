@@ -1,4 +1,4 @@
-import './app.css'
+import './App.css'
 import persons from './data/db.json'
 
 function App() {
