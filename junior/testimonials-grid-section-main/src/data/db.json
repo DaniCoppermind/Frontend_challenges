@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "imgUrl": "src/assets/image-daniel.jpg",
+    "imgUrl": "public/image-daniel.jpg",
     "name": "Daniel Clifford",
     "verified": "Verified Graduate",
     "comment": "I received a job offer mid-course, and the subjects I learned were current, if not more so, in the company I joined. I honestly feel I got every penny’s worth.",
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "imgUrl": "src/assets/image-jonathan.jpg",
+    "imgUrl": "public/image-jonathan.jpg",
     "name": "Jonathan Walters",
     "verified": "Verified Graduate",
     "comment": "The team was very supportive and kept me motivated",
@@ -17,7 +17,7 @@
   },
   {
     "id": "3",
-    "imgUrl": "src/assets/image-jeanette.jpg",
+    "imgUrl": "public/image-jeanette.jpg",
     "name": "Jeanette Harmon",
     "verified": "Verified Graduate",
     "comment": "An overall wonderful and rewarding experience",
@@ -25,7 +25,7 @@
   },
   {
     "id": "4",
-    "imgUrl": "src/assets/image-patrick.jpg",
+    "imgUrl": "public/image-patrick.jpg",
     "name": "Patrick Abrams",
     "verified": "Verified Graduate",
     "comment": "Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and learning from their experiences was easy.",
@@ -33,7 +33,7 @@
   },
   {
     "id": "5",
-    "imgUrl": "src/assets/image-kira.jpg",
+    "imgUrl": "public/image-kira.jpg",
     "name": "Kira Whittle",
     "verified": "Verified Graduate",
     "comment": "Such a life-changing experience. Highly recommended!",
