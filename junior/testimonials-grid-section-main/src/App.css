@@ -69,8 +69,8 @@
 /* Personal Card Styles */
 
 .card__1 {
-  background: var(--moderate-violet) url(./assets/bg-pattern-quotation.svg)
-    no-repeat 90% top/30%;
+  background: var(--moderate-violet) url(bg-pattern-quotation.svg) no-repeat 90%
+    top/25%;
 }
 
 .card__2 {
