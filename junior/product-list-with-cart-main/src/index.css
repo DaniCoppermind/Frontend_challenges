@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap');
+@import 'tailwindcss';
+
+body {
+  @apply font-sans bg-rose-50 m-2;
+}
