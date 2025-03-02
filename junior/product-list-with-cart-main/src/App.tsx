@@ -1,5 +1,5 @@
-import CardProduct from '@components/Card/CardProduct'
-import CartProduct from '@components/Cart/CartProduct'
+import CardProduct from './components/Card/CardProduct'
+import CartProduct from './components/Cart/CartProduct'
 import { useProductContext } from './context/ProductContext'
 
 const App = () => {
