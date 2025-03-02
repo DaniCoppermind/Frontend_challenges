@@ -1,8 +1,17 @@
 import iconAddToCart from '/assets/images/icon-add-to-cart.svg'
 
-const CardProduct = ({ product }) => {
+interface Product {
+  name: string
+  category: string
+  price: number
+  image: {
+    mobile: string
+  }
+}
+
+const CardProduct = ({ product }: { product: Product }) => {
   const { name, category, price } = product
-  const { thumbnail, mobile, desktop, tablet } = product.image
+  const { mobile } = product.image
 
   return (
     <article className='max-w-xs rounded-lg overflow-hidden bg-white py-2 px-1'>
