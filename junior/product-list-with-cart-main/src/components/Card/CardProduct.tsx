@@ -5,7 +5,7 @@ const CardProduct = ({ product }) => {
   const { thumbnail, mobile, desktop, tablet } = product.image
 
   return (
-    <article className='max-w-xs rounded-lg overflow-hidden bg-white p-4'>
+    <article className='max-w-xs rounded-lg overflow-hidden bg-white py-2 px-1'>
       <div className='relative'>
         <img
           src={mobile}
