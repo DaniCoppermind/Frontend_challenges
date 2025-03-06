@@ -1,18 +1,20 @@
-import iconAddToCart from '/assets/images/icon-add-to-cart.svg';
+import QuantifierButton from '../components/Card/QuantifierButton'
+import { useCartContext } from '../context/CartContext'
+import { type Product as ProductProps } from '../models/products'
 
-interface Product {
-  name: string;
-  category: string;
-  price: number;
-  image: {
-    mobile: string;
-    desktop: string;
-  };
-}
+const Product = ({ product }: { product: ProductProps }) => {
+  const { name, category, price } = product
+  const { mobile, desktop } = product.image
 
-const CardProduct = ({ product }: { product: Product }) => {
-  const { name, category, price } = product;
-  const { mobile, desktop } = product.image;
+  const { addProducts } = useCartContext()
+
+  const handleButton = () => {
+    const ProductToCart = {
+      name: product.name,
+      price: product.price,
+    }
+    addProducts(ProductToCart)
+  }
 
   return (
     <article className='max-w-xs rounded-lg overflow-hidden bg-white py-2 px-1'>
@@ -28,10 +30,7 @@ const CardProduct = ({ product }: { product: Product }) => {
           />
         </picture>
         <div className='absolute bottom-0 left-0 right-0 flex justify-center transform translate-y-1/2'>
-          <button className='flex cursor-pointer bg-white items-center justify-center gap-2 px-4 py-2 rounded-full border border-rose-300 transition-colors'>
-            <img src={iconAddToCart} alt='Add to Cart' className='w-4 h-4' />
-            <span className='text-sm font-medium'>Add to Cart</span>
-          </button>
+          <QuantifierButton handleSubmit={handleButton} />
         </div>
       </div>
       <section className='pt-8 pb-4'>
@@ -40,7 +39,7 @@ const CardProduct = ({ product }: { product: Product }) => {
         <p className='font-medium text-lg  text-red-800'>${price.toFixed(2)}</p>
       </section>
     </article>
-  );
-};
+  )
+}
 
-export default CardProduct;
+export default Product
