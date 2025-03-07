@@ -5,17 +5,7 @@ import { type Product as ProductProps } from '../models/products'
 const Product = ({ product }: { product: ProductProps }) => {
   const { name, category, price } = product
   const { mobile, desktop } = product.image
-
-  const { addProducts } = useCartContext()
-
-  const handleButton = () => {
-    const ProductToCart = {
-      name: product.name,
-      price: product.price,
-    }
-    addProducts(ProductToCart)
-  }
-
+  const { addItemToCart } = useCartContext()
   return (
     <article className='max-w-xs rounded-lg overflow-hidden bg-white py-2 px-1'>
       <div className='relative'>
@@ -30,7 +20,7 @@ const Product = ({ product }: { product: ProductProps }) => {
           />
         </picture>
         <div className='absolute bottom-0 left-0 right-0 flex justify-center transform translate-y-1/2'>
-          <QuantifierButton handleSubmit={handleButton} />
+          <QuantifierButton handleButton={() => addItemToCart} />
         </div>
       </div>
       <section className='pt-8 pb-4'>

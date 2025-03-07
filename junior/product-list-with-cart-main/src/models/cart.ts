@@ -1,12 +1,10 @@
-import { Product, ProductToCart } from "./products"
-
-export interface cartProducts {
-  product: ProductToCart
-  quantity: number
+import { Product, ProductName, ProductPrice } from "./products"
+export interface CartContextType {
+  products: Product[]
 }
 
-export interface CartContextType {
-  productsToShow: Product[]
-  productsToCart: cartProducts[]
-  addProducts: (product: ProductToCart, quantity?: number) => void
+export interface CartItem {
+  name: ProductName
+  price: ProductPrice
+  quantity: number
 }

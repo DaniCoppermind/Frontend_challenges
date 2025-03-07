@@ -9,4 +9,5 @@ export type Product = {
   }
 }
 
-export type ProductToCart = Pick<Product, 'name' | 'price'>
+export type ProductName = Pick<Product, 'name'>
+export type ProductPrice = Pick<Product, 'price'>
