@@ -3,11 +3,8 @@ export type Product = {
   price: number
   category: string
   image: {
-    desktop: string
-    mobile: string
     thumbnail: string
+    mobile: string
+    desktop: string
   }
 }
-
-export type ProductName = Pick<Product, 'name'>
-export type ProductPrice = Pick<Product, 'price'>
