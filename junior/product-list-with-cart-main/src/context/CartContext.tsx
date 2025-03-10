@@ -42,7 +42,6 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
   const increaseCartItem = (name: string) => {
     setCartItems((currItems) => {
       const product = products.find((p) => p.name === name)
-      console.log(product?.image.thumbnail)
       if (!product) return currItems
 
       if (currItems.find((item) => item.name === name) == null) {
@@ -90,6 +89,10 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
     })
   }
 
+  const cleanCart = () => {
+    setCartItems([])
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -99,6 +102,7 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
         removeCartItem,
         increaseCartItem,
         decreaseCartItem,
+        cleanCart,
         quantity,
         totalPrice,
       }}

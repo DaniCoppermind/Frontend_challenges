@@ -7,9 +7,23 @@ import orderConfirmedIcon from '/assets/images/icon-order-confirmed.svg'
 import { useState } from 'react'
 import { Modal } from '../components/Modal'
 
+const TIMER_SUCCESS_MESSAGE = 3000
+
 const Cart = () => {
-  const { cartItems, quantity, totalPrice, removeCartItem } = useCartContext()
+  const { cartItems, quantity, totalPrice, removeCartItem, cleanCart } =
+    useCartContext()
   const [isOpen, setIsOpen] = useState(false)
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+
+  const handleNewOrder = () => {
+    cleanCart()
+    setIsOpen(false)
+    setShowSuccessMessage(true)
+
+    setTimeout(() => {
+      setShowSuccessMessage(false)
+    }, TIMER_SUCCESS_MESSAGE)
+  }
 
   return (
     <section
@@ -73,6 +87,7 @@ const Cart = () => {
             Confirm Order
           </button>
 
+          {/* Modal Cart Confirm Order */}
           {isOpen && (
             <Modal onClose={() => setIsOpen(false)}>
               <section className='flex flex-col justify-between h-full'>
@@ -88,18 +103,32 @@ const Cart = () => {
                   </p>
                 </div>
 
-                <div className='mt-4 space-y-4 flex-1 bg-rose-50 opacity-70'>
+                <div className='mt-4 space-y-4 flex-1 bg-rose-50 p-4 rounded-xl'>
                   {cartItems.map((item) => (
-                    <div key={item.name} className=''>
-                      <img
-                        src={item.thumbnail}
-                        alt={`${item.name} thumbnail`}
-                      />
-                      <span className='text-gray-700 font-medium'>
-                        {item.quantity}x {item.name}
-                      </span>
-                      <span className='text-gray-600 font-semibold'>
-                        ${(item.quantity * item.price).toFixed(2)}
+                    <div
+                      key={item.name}
+                      className='flex items-center justify-between'
+                    >
+                      <div className='flex gap-2'>
+                        <img
+                          src={item.thumbnail}
+                          alt={`${item.name} thumbnail`}
+                          height={50}
+                          width={50}
+                          className='rounded-xl'
+                        />
+                        <div>
+                          <h4 className='font-bold'>{item.name}</h4>
+                          <span className='text-orange-700'>
+                            {item.quantity}x{' '}
+                            <span className='text-gray-500'>
+                              @ ${item.price.toFixed(2)}
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                      <span className='text-lg font-semibold'>
+                        ${(item.price * item.quantity).toFixed(2)}
                       </span>
                     </div>
                   ))}
@@ -113,7 +142,7 @@ const Cart = () => {
                 </div>
 
                 <button
-                  onClick={() => setIsOpen(false)}
+                  onClick={handleNewOrder}
                   className='w-full mt-6 bg-orange-700 text-white py-3 px-6 rounded-full font-medium hover:bg-orange-900 transition'
                 >
                   Start New Order
@@ -135,6 +164,12 @@ const Cart = () => {
             Your added items will appear here
           </p>
         </>
+      )}
+
+      {showSuccessMessage && (
+        <div className='fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-green-500 text-white py-3 px-6 rounded-lg shadow-lg transition-opacity duration-300 opacity-100'>
+          ✅ Purchase Successful!
+        </div>
       )}
     </section>
   )

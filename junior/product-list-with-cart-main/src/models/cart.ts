@@ -7,8 +7,9 @@ export interface CartContextType {
   removeCartItem: (name: string) => void
   increaseCartItem: (name: string) => void
   decreaseCartItem: (name: string) => void
-  quantity: number
+  cleanCart: () => void
   totalPrice: number
+  quantity: number
 }
 
 export type CartItem = {
