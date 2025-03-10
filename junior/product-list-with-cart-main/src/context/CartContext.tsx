@@ -8,6 +8,7 @@ import {
 import { CartContextType, CartItem } from '../models/cart'
 import data from '../data.json'
 import { Product } from '../models/products'
+import { useLocalStorage } from '../hooks/UseLocalStorage'
 
 const CartContext = createContext<CartContextType | undefined>(undefined)
 
@@ -19,7 +20,10 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
   // Products to show
   const [products, setProducts] = useState<Product[]>([])
   // Cart Products
-  const [cartItems, setCartItems] = useState<CartItem[]>([])
+  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
+    'shopping-cart',
+    []
+  )
 
   useEffect(() => {
     setProducts(data)
@@ -38,13 +42,27 @@ export const CartProvider: React.FC<Props> = ({ children }) => {
   const increaseCartItem = (name: string) => {
     setCartItems((currItems) => {
       const product = products.find((p) => p.name === name)
+      console.log(product?.image.thumbnail)
       if (!product) return currItems
 
       if (currItems.find((item) => item.name === name) == null) {
-        return [...currItems, { name, price: product.price, quantity: 1 }]
+        return [
+          ...currItems,
+          {
+            name,
+            price: product.price,
+            quantity: 1,
+            thumbnail: product.image.thumbnail,
+          },
+        ]
       } else {
         return currItems.map((item) =>
-          item.name === name ? { ...item, quantity: item.quantity + 1 } : item
+          item.name === name
+            ? {
+                ...item,
+                quantity: item.quantity + 1,
+              }
+            : item
         )
       }
     })
