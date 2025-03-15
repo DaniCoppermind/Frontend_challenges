@@ -14,7 +14,7 @@ const Form = () => {
 
   return (
     <>
-      <div className='text-neutral-50 text-center w-90 m-auto'>
+      <div className='text-neutral-50 text-center w-80 m-auto md:w-100'>
         <h1 className='text-3xl mb-2'>
           Your Journey to Coding Conf 2025 Starts Here!
         </h1>
