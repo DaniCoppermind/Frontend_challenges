@@ -28,8 +28,6 @@ const Ticket = () => {
     }
   }, [avatarImage])
 
-  const rickRoll = () => {}
-
   return (
     <div className='mx-auto flex flex-col items-center p-4'>
       <section className='flex flex-col items-center max-w-md mx-auto mb-12 text-center'>
